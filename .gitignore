@@ -1,0 +1,23 @@
+# Dépendances
+node_modules/
+**/node_modules/
+
+# Builds
+desktop/dist/
+**/dist/
+build/
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / éditeurs
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Données système locales
+.arqon/
+*.local

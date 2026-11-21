@@ -1,0 +1,93 @@
+/* ============================================================================
+   ARQON OS — Fenêtres
+   ========================================================================== */
+.aq-window {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--aq-radius-lg);
+  border: var(--aq-glass-border);
+  box-shadow: var(--aq-shadow-lg);
+  overflow: hidden;
+  animation: aq-scale-in var(--aq-dur) var(--aq-ease-out);
+  z-index: 10;
+}
+.aq-window.maximized {
+  border-radius: 0;
+}
+
+.aq-window-titlebar {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 12px;
+  background: var(--aq-glass-strong);
+  border-bottom: var(--aq-glass-border);
+  cursor: default;
+  user-select: none;
+  flex-shrink: 0;
+}
+.aq-window-traffic {
+  display: flex;
+  gap: 8px;
+  width: 68px;
+}
+.aq-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  color: rgba(0, 0, 0, 0.55);
+  cursor: pointer;
+  transition: transform var(--aq-dur-fast) var(--aq-ease);
+}
+.aq-dot:hover { transform: scale(1.12); }
+.aq-dot-red { background: #ff5f57; }
+.aq-dot-yellow { background: #febc2e; }
+.aq-dot-green { background: #28c840; }
+
+.aq-window-title {
+  flex: 1;
+  text-align: center;
+  font-size: var(--aq-font-sm);
+  font-weight: 600;
+  color: var(--aq-text-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.aq-window-max {
+  width: 28px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--aq-muted);
+  border-radius: var(--aq-radius-sm);
+}
+.aq-window-max:hover { background: var(--aq-surface-hover); color: var(--aq-text); }
+
+.aq-window-body {
+  flex: 1;
+  overflow: hidden;
+  background: var(--aq-bg-soft);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Redimensionnement */
+.aq-resize {
+  position: absolute;
+  z-index: 5;
+}
+.aq-resize-n { top: -2px; left: 8px; right: 8px; height: 6px; cursor: ns-resize; }
+.aq-resize-s { bottom: -2px; left: 8px; right: 8px; height: 6px; cursor: ns-resize; }
+.aq-resize-e { right: -2px; top: 8px; bottom: 8px; width: 6px; cursor: ew-resize; }
+.aq-resize-w { left: -2px; top: 8px; bottom: 8px; width: 6px; cursor: ew-resize; }
+.aq-resize-ne { top: -2px; right: -2px; width: 12px; height: 12px; cursor: nesw-resize; }
+.aq-resize-nw { top: -2px; left: -2px; width: 12px; height: 12px; cursor: nwse-resize; }
+.aq-resize-se { bottom: -2px; right: -2px; width: 12px; height: 12px; cursor: nwse-resize; }
+.aq-resize-sw { bottom: -2px; left: -2px; width: 12px; height: 12px; cursor: nesw-resize; }

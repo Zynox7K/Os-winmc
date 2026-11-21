@@ -1,0 +1,13 @@
+# Exclusions du contexte de build Docker (ARQON OS)
+node_modules
+**/node_modules
+.git
+**/.git
+desktop/dist
+**/dist
+*.log
+.DS_Store
+.vscode
+.idea
+.arqon
+documentation
