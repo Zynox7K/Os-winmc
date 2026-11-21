@@ -1,0 +1,20 @@
+{
+  "name": "arqon-os",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ARQON OS — Developer Operating System. Build. Code. Create.",
+  "workspaces": [
+    "system",
+    "desktop"
+  ],
+  "scripts": {
+    "dev:system": "npm run dev --workspace system",
+    "dev:desktop": "npm run dev --workspace desktop",
+    "build": "npm run build --workspace desktop",
+    "start": "npm run start --workspace system",
+    "test": "npm run test --workspace system && npm run test --workspace desktop"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

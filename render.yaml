@@ -1,0 +1,20 @@
+# ============================================================================
+# ARQON OS — Configuration Render
+# Déploiement automatique : Render construit et deploy à chaque push sur main.
+# Une seule service : le backend sert l'UI, l'API et le PTY terminal.
+# ============================================================================
+services:
+  - type: web
+    name: arqon-os
+    runtime: docker
+    # Le Dockerfile inclut Node.js + Python 3 (PTY terminal réel) + le build desktop.
+    plan: free            # startup : free (payant recommandé pour un terminal WS persistant)
+    autoDeploy: true       # déploiement automatique à chaque push
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "8787"
+    # Le service écoute sur 0.0.0.0:8787 (config dans server.js + Dockerfile).
+    restartPolicy: always

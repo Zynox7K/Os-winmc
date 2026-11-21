@@ -1,0 +1,110 @@
+/* ============================================================================
+   ARQON OS — Design System Tokens
+   Mode sombre par défaut. Glassmorphism discret. Palette ARQON.
+   ========================================================================== */
+
+:root {
+  /* ---- Palette ARQON ---- */
+  --aq-bg: #090d16;
+  --aq-bg-soft: #0c1220;
+  --aq-secondary: #111827;
+  --aq-surface: #182235;
+  --aq-surface-raised: #1d2942;
+  --aq-surface-hover: #20304d;
+  --aq-accent: #328bff;
+  --aq-accent-soft: rgba(50, 139, 255, 0.14);
+  --aq-accent-2: #765bff;
+  --aq-accent-2-soft: rgba(118, 91, 255, 0.14);
+  --aq-text: #f5f7fc;
+  --aq-text-dim: #c3cde0;
+  --aq-muted: #8b96aa;
+  --aq-success: #25c98a;
+  --aq-success-soft: rgba(37, 201, 138, 0.14);
+  --aq-warning: #f5b942;
+  --aq-warning-soft: rgba(245, 185, 66, 0.14);
+  --aq-error: #f05d6c;
+  --aq-error-soft: rgba(240, 93, 108, 0.14);
+
+  /* ---- Grille & espacements ---- */
+  --aq-radius-sm: 6px;
+  --aq-radius: 10px;
+  --aq-radius-lg: 16px;
+  --aq-radius-xl: 22px;
+
+  --aq-gap-1: 4px;
+  --aq-gap-2: 8px;
+  --aq-gap-3: 12px;
+  --aq-gap-4: 16px;
+  --aq-gap-5: 24px;
+  --aq-gap-6: 32px;
+  --aq-gap-8: 48px;
+
+  /* ---- Ombres douces ---- */
+  --aq-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --aq-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --aq-shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.55);
+  --aq-shadow-glow: 0 0 0 1px rgba(50, 139, 255, 0.25), 0 8px 28px rgba(50, 139, 255, 0.18);
+
+  /* ---- Typographie moderne ---- */
+  --aq-font: "Inter", "SF Pro Text", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --aq-font-mono: "JetBrains Mono", "SF Mono", "Fira Code", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+
+  --aq-font-xs: 11px;
+  --aq-font-sm: 12.5px;
+  --aq-font-md: 14px;
+  --aq-font-lg: 16px;
+  --aq-font-xl: 20px;
+  --aq-font-2xl: 26px;
+  --aq-font-3xl: 34px;
+
+  /* ---- Glassmorphism ---- */
+  --aq-glass: rgba(24, 34, 53, 0.72);
+  --aq-glass-strong: rgba(20, 28, 45, 0.88);
+  --aq-glass-border: rgba(255, 255, 255, 0.07);
+  --aq-glass-blur: 18px;
+
+  /* ---- Motion ---- */
+  --aq-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --aq-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --aq-dur-fast: 120ms;
+  --aq-dur: 220ms;
+  --aq-dur-slow: 360ms;
+
+  /* ---- Épaisseur ---- */
+  --aq-border: 1px solid rgba(255, 255, 255, 0.07);
+  --aq-border-strong: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ---- Effets utilitaires ---- */
+.aq-glass {
+  background: var(--aq-glass);
+  backdrop-filter: blur(var(--aq-glass-blur)) saturate(140%);
+  -webkit-backdrop-filter: blur(var(--aq-glass-blur)) saturate(140%);
+  border: var(--aq-glass-border);
+}
+
+.aq-surface {
+  background: var(--aq-surface);
+  border: var(--aq-border);
+  border-radius: var(--aq-radius);
+}
+
+/* Défilement personnalisé */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--aq-surface-hover) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--aq-surface-hover);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--aq-accent);
+  background-clip: content-box;
+}
